@@ -93,6 +93,8 @@ export function ServicesSection() {
   const targetY = useSpring(0, springConfig);
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    if (typeof window !== 'undefined' && window.innerWidth < 768) return;
+    
     setHoveredId(id);
     if (!containerRef.current) return;
     const containerRect = containerRef.current.getBoundingClientRect();
@@ -100,12 +102,24 @@ export function ServicesSection() {
     
     // Calculate center of row relative to container
     const relativeY = (rowRect.top - containerRect.top) + (rowRect.height / 2);
-    // Rough estimate of half card height is 230 to keep it centered (since height is dynamic)
-    targetY.set(relativeY - 230);
+    // Rough estimate of half card height is 200 (card is ~400px tall)
+    const cardHeight = 400;
+    let newTargetY = relativeY - (cardHeight / 2);
+
+    // Clamp to ensure it doesn't go above or below the container bounds
+    if (newTargetY < 0) {
+      newTargetY = 0;
+    } else if (newTargetY + cardHeight > containerRect.height) {
+      newTargetY = containerRect.height - cardHeight;
+    }
+
+    targetY.set(newTargetY);
   };
 
   const handleMouseLeave = () => {
-    setHoveredId(null);
+    if (typeof window !== 'undefined' && window.innerWidth >= 768) {
+      setHoveredId(null);
+    }
   };
 
   const activeService = services.find(s => s.id === hoveredId);
@@ -138,17 +152,23 @@ export function ServicesSection() {
             <div key={service.id} className="border-b border-neutral-300/60">
               <motion.a
                 href={`#service-${service.id}`}
+                onClick={(e) => {
+                  if (typeof window !== 'undefined' && window.innerWidth < 768) {
+                    e.preventDefault();
+                    setHoveredId(hoveredId === service.id ? null : service.id);
+                  }
+                }}
                 onMouseEnter={(e) => handleMouseEnter(e, service.id)}
-                className="flex items-center justify-between h-[72px] md:h-[88px] px-5 md:px-12 group relative cursor-pointer rounded-2xl w-full overflow-hidden"
+                className={`flex items-center justify-between h-[72px] md:h-[88px] px-5 md:px-12 group relative cursor-pointer w-full overflow-hidden transition-colors duration-180 ${hoveredId === service.id ? 'bg-[#0D9488] md:bg-transparent rounded-t-2xl md:rounded-2xl' : 'rounded-2xl'}`}
                 whileHover={{ backgroundColor: '#0D9488' }}
                 transition={{ duration: 0.18 }}
               >
                 {/* Left Side */}
                 <div className="flex items-center gap-6 md:gap-12 pointer-events-none">
-                  <span className="text-[11px] font-semibold text-neutral-400 transition-colors duration-200 group-hover:text-white/50">
+                  <span className={`text-[11px] font-semibold transition-colors duration-200 group-hover:text-white/50 ${hoveredId === service.id ? 'text-white/50 md:text-neutral-400' : 'text-neutral-400'}`}>
                     {service.id}
                   </span>
-                  <span className="text-[18px] md:text-[28px] font-extrabold tracking-tight text-neutral-900 transition-colors duration-200 group-hover:text-white">
+                  <span className={`text-[18px] md:text-[28px] font-extrabold tracking-tight transition-colors duration-200 group-hover:text-white ${hoveredId === service.id ? 'text-white md:text-neutral-900' : 'text-neutral-900'}`}>
                     {service.name}
                   </span>
                 </div>
@@ -163,6 +183,62 @@ export function ServicesSection() {
                   </span>
                 </div>
               </motion.a>
+
+              {/* Mobile Details (Accordion) */}
+              <AnimatePresence>
+                {hoveredId === service.id && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    className="md:hidden overflow-hidden bg-[#0D9488] rounded-b-2xl mx-0 mt-[-10px] relative z-0 mb-2"
+                  >
+                    <div className="pt-6 px-5 pb-5">
+                      <div className="relative h-[160px] w-full overflow-hidden rounded-xl mb-4">
+                        {service.image ? (
+                          <img
+                            src={service.image}
+                            alt={service.name}
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center bg-[#0a7a70]">
+                            <service.icon size={48} strokeWidth={1.2} className="text-white/30" />
+                          </div>
+                        )}
+                        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#0D9488] to-transparent pointer-events-none" />
+                      </div>
+                      
+                      <p className="text-[13px] text-white/80 leading-[1.6]">
+                        {service.description}
+                      </p>
+
+                      <div className="mt-5 flex gap-2">
+                        <button 
+                          onClick={(e) => {
+                            e.preventDefault();
+                            router.push('/appointment');
+                          }}
+                          className="flex-1 h-[44px] rounded-full bg-white text-[#0D9488] text-[13px] font-bold flex items-center justify-center gap-1.5"
+                        >
+                          Book Consultation
+                          <ArrowRight size={14} strokeWidth={2.5} />
+                        </button>
+                        
+                        <button 
+                          onClick={(e) => {
+                            e.preventDefault();
+                            router.push(`/services/${service.slug}`);
+                          }}
+                          className="w-[44px] h-[44px] rounded-full flex-none bg-white/12 border border-white/25 flex items-center justify-center text-white/80"
+                        >
+                          <MoreHorizontal size={18} strokeWidth={2} />
+                        </button>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           ))}
 

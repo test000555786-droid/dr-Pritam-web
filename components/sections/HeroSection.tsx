@@ -46,7 +46,7 @@ export function HeroSection() {
     : { hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { ease: [0.76, 0, 0.24, 1], duration: 0.8 } } };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center bg-white pt-16 lg:pt-[72px] w-full overflow-x-hidden overflow-y-hidden">
+    <section id="hero" className="relative min-h-[100svh] flex items-start md:items-center bg-white pt-[24px] md:pt-[72px] w-full overflow-x-hidden overflow-y-hidden">
       <div className="grain-overlay" />
 
       {/* Dot-grid pattern */}
@@ -59,7 +59,7 @@ export function HeroSection() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 lg:py-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-0 pb-28 lg:pb-24">
         <div className="grid lg:grid-cols-[55%_45%] gap-12 items-center">
           {/* Left Column */}
           <motion.div
@@ -202,7 +202,7 @@ export function HeroSection() {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 scroll-indicator"
+        className="absolute bottom-16 left-1/2 -translate-x-1/2 scroll-indicator z-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2 }}
@@ -211,7 +211,7 @@ export function HeroSection() {
       </motion.div>
 
       {/* Marquee strip */}
-      <div className="absolute bottom-0 left-0 right-0 h-12 bg-teal-50 flex items-center w-full overflow-hidden">
+      <div className="absolute bottom-0 left-0 right-0 h-12 bg-teal-50 flex items-center w-full overflow-hidden z-20">
         <div className="marquee-track whitespace-nowrap flex items-center gap-8 text-[12px] uppercase tracking-widest text-teal-600 font-semibold will-change-transform">
           {Array.from({ length: 4 }).map((_, i) => (
             <span key={i} className="flex items-center gap-8">
