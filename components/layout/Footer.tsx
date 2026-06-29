@@ -99,7 +99,7 @@ export function Footer() {
               <div className="space-y-3 text-sm text-slate-400">
                 <p>Choudhury Dental & Skin Care Clinic</p>
                 <p>Main Road, Salipur, Cuttack, Odisha — 754202</p>
-                <p>Phone: +91 XXXXX XXXXX</p>
+                <p>Phone: +91 9337512311</p>
                 <p>Email: contact@drpritampraharaj.com</p>
                 <p className="pt-2">
                   <span className="text-teal-400">Mon — Sat:</span> 9:00 AM — 8:00 PM<br />

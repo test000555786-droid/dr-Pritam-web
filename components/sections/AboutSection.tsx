@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Award } from 'lucide-react';
 import { RevealOnScroll } from '@/components/ui/RevealOnScroll';
@@ -22,42 +23,53 @@ export function AboutSection() {
   return (
     <section id="about" className="py-20 lg:py-28 bg-[#F0FDFA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-[45%_55%] gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-[45%_55%] gap-12 lg:gap-16 items-stretch">
           {/* Left Column — Visual Stack */}
-          <RevealOnScroll direction="left" className="relative">
-            <div className="relative">
-              {/* Main credential card */}
-              <div className="rounded-3xl bg-gradient-to-br from-teal-600 to-teal-800 p-8 text-white shadow-xl">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-20 h-20 rounded-full bg-teal-700 flex items-center justify-center border-4 border-white/20">
-                    <span className="text-3xl font-extrabold">PP</span>
+          <RevealOnScroll direction="left" className="relative h-full">
+            <div className="relative h-full min-h-[500px] lg:min-h-[600px] w-full">
+              {/* Image Card Container */}
+              <div className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl group">
+                <Image 
+                  src="/images/dr-pritam-pratik.webp" 
+                  alt="Dr. Ch. Pritam Pratik Praharaj" 
+                  fill 
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 45vw"
+                  priority
+                />
+                
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-teal-950/95 via-teal-900/60 to-transparent"></div>
+
+                {/* Text content pinned to bottom */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8 text-white">
+                  <div className="mb-6">
+                    <div className="font-bold text-2xl lg:text-3xl tracking-tight mb-1">Dr. Ch. Pritam Pratik Praharaj</div>
+                    <div className="font-medium text-teal-200 text-lg">Implantologist & RCT Specialist</div>
+                    <div className="text-teal-100 text-sm mt-1 opacity-90">Choudhury Dental & Skin Care Clinic, Salipur</div>
                   </div>
-                  <div>
-                    <div className="font-bold text-xl">Dr. Ch. Pritam Pratik Praharaj</div>
-                    <div className="font-medium text-teal-100">Implantologist & RCT Specialist</div>
-                    <div className="text-teal-200 text-sm">Choudhury Dental & Skin Care Clinic, Salipur</div>
+                  
+                  <div className="flex flex-col gap-2.5">
+                    <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-medium px-4 py-2.5 rounded-xl w-fit flex items-center gap-2 shadow-sm">
+                      <span className="text-base">🎓</span> BDS — Utkal University
+                    </span>
+                    <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-medium px-4 py-2.5 rounded-xl w-fit flex items-center gap-2 shadow-sm">
+                      <span className="text-base">🪪</span> Regd. No. 1477(A), Odisha State Dental Council
+                    </span>
+                    <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-medium px-4 py-2.5 rounded-xl w-fit flex items-center gap-2 shadow-sm">
+                      <span className="text-base">🦷</span> Certified Implantologist
+                    </span>
                   </div>
-                </div>
-                <div className="flex flex-col gap-3">
-                  <span className="bg-white text-teal-700 text-xs font-semibold px-4 py-2 rounded-full w-fit">
-                    🎓 BDS — Utkal University
-                  </span>
-                  <span className="bg-white text-teal-700 text-xs font-semibold px-4 py-2 rounded-full w-fit">
-                    🪪 Regd. No. 1477(A), Odisha State Dental Council
-                  </span>
-                  <span className="bg-white text-teal-700 text-xs font-semibold px-4 py-2 rounded-full w-fit">
-                    🦷 Certified Implantologist
-                  </span>
                 </div>
               </div>
 
               {/* Floating sub-card */}
-              <div className="absolute -bottom-6 -right-6 z-10">
-                <FloatingCard delay={0.4} className="shadow-2xl border-teal-200">
+              <div className="absolute top-6 right-6 lg:-right-6 z-10">
+                <FloatingCard delay={0.4} className="shadow-2xl border-teal-200 bg-white/95 backdrop-blur-sm min-w-[120px]">
                   <div className="flex flex-col items-center">
-                    <Award className="w-5 h-5 text-teal-600 mb-1" />
+                    <Award className="w-6 h-6 text-teal-600 mb-1" />
                     <span className="text-3xl font-extrabold text-teal-600">15+</span>
-                    <span className="text-xs text-slate-500 font-medium">Years of Clinical Excellence</span>
+                    <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider text-center mt-1">Years of<br/>Clinical Excellence</span>
                   </div>
                 </FloatingCard>
               </div>

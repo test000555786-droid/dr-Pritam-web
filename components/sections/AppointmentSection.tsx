@@ -63,6 +63,8 @@ export function AppointmentSection() {
     e.preventDefault();
     if (validate()) {
       setSubmitted(true);
+      const text = `Hello Dr. Pritam, I would like to book an appointment.%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.phone}${formData.email ? `%0A*Email:* ${formData.email}` : ''}%0A*Service:* ${formData.service}%0A*Date:* ${formData.date}${formData.message ? `%0A*Message:* ${formData.message}` : ''}`;
+      window.open(`https://wa.me/919337512311?text=${text}`, '_blank');
     }
   };
 
@@ -90,7 +92,7 @@ export function AppointmentSection() {
             </div>
             <div className="flex items-start gap-3">
               <Phone className="w-5 h-5 text-teal-200 mt-0.5 shrink-0" />
-              <span className="text-white/90 text-sm">+91 XXXXX XXXXX</span>
+              <span className="text-white/90 text-sm">+91 9337512311</span>
             </div>
             <div className="flex items-start gap-3">
               <Mail className="w-5 h-5 text-teal-200 mt-0.5 shrink-0" />
@@ -106,7 +108,7 @@ export function AppointmentSection() {
           </div>
 
           <SlideButton
-            href="https://wa.me/919999999999?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20Dr.%20Praharaj."
+            href="https://wa.me/919337512311?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20Dr.%20Praharaj."
             target="_blank"
             rel="noopener noreferrer"
             variant="primary"
@@ -170,7 +172,7 @@ export function AppointmentSection() {
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm focus:border-teal-500 focus:ring-2 focus:ring-teal-100 outline-none transition-all"
-                      placeholder="+91 XXXXX XXXXX"
+                      placeholder="+91 9337512311"
                     />
                     <AnimatePresence>
                       {errors.phone && (

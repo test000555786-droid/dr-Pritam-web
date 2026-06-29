@@ -141,7 +141,7 @@ export function HeroSection() {
 
             {/* Description */}
             <motion.p variants={itemVariants} className="text-lg text-slate-500 max-w-md leading-relaxed mb-8">
-              Providing advanced, pain-free dental care at Choudhury Dental & Skin Care Clinic, Salipur — with 15+ years of expertise in dental implants, root canal therapy, and comprehensive oral care.
+              Providing advanced, pain-free dental care at Choudhury Dental &amp; Skin Care Clinic, Salipur — with 15+ years of expertise in dental implants, root canal therapy, and comprehensive oral care.
             </motion.p>
 
             {/* CTA Row */}
@@ -219,7 +219,7 @@ export function HeroSection() {
               <span>·</span>
               <span>Root Canal Treatment</span>
               <span>·</span>
-              <span>Crowns & Bridges</span>
+              <span>Crowns &amp; Bridges</span>
               <span>·</span>
               <span>Teeth Whitening</span>
               <span>·</span>

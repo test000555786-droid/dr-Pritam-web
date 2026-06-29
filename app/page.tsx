@@ -43,7 +43,7 @@ function WhatsAppButton() {
         onMouseLeave={onMouseLeave}
         onMouseEnter={() => setShowTooltip(true)}
         onMouseOut={() => setShowTooltip(false)}
-        href="https://wa.me/919999999999?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20Dr.%20Praharaj."
+        href="https://wa.me/919337512311?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20Dr.%20Praharaj."
         target="_blank"
         rel="noopener noreferrer"
         className="relative w-[60px] h-[60px] rounded-full bg-green-500 flex items-center justify-center text-white shadow-xl hover:shadow-2xl transition-shadow wa-pulse"
@@ -60,14 +60,14 @@ function MobileBottomBar() {
   return (
     <div className="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-slate-100 flex h-[52px]">
       <a
-        href="tel:+919999999999"
+        href="tel:+919337512311"
         className="flex-1 flex items-center justify-center gap-2 bg-teal-600 text-white font-semibold text-sm"
       >
         <Phone className="w-4 h-4" />
         Call Now
       </a>
       <a
-        href="https://wa.me/919999999999?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20Dr.%20Praharaj."
+        href="https://wa.me/919337512311?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20Dr.%20Praharaj."
         target="_blank"
         rel="noopener noreferrer"
         className="flex-1 flex items-center justify-center gap-2 bg-green-500 text-white font-semibold text-sm"

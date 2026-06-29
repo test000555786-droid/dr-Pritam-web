@@ -107,13 +107,13 @@ export function LocationSection() {
                 {/* Quick contact buttons */}
                 <StaggerItem>
                   <div className="grid grid-cols-3 gap-3">
-                    <SlideButton href="tel:+919999999999" variant="outline" className="w-full justify-center px-4">
+                    <SlideButton href="tel:+919337512311" variant="outline" className="w-full justify-center px-4">
                       <Phone className="w-4 h-4" />
                     </SlideButton>
                     <SlideButton href="mailto:contact@drpritampraharaj.com" variant="outline" className="w-full justify-center px-4">
                       <Mail className="w-4 h-4" />
                     </SlideButton>
-                    <SlideButton href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer" variant="outline" className="w-full justify-center px-4">
+                    <SlideButton href="https://wa.me/919337512311" target="_blank" rel="noopener noreferrer" variant="outline" className="w-full justify-center px-4">
                       💬
                     </SlideButton>
                   </div>

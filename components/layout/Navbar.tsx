@@ -18,13 +18,13 @@ const desktopNavLinks = [
 ];
 
 const mobileNavLinks = [
-  { href: "/",              label: "Home",            icon: "🏠" },
-  { href: "/about",         label: "About",           icon: "👨⚕️" },
-  { href: "/specializations",label: "Specializations", icon: "⭐" },
-  { href: "/services",      label: "Services",        icon: "🦷" },
-  { href: "/appointment",   label: "Appointment",     icon: "📅" },
-  { href: "/blog",          label: "Blog",            icon: "📝" },
-  { href: "/contact",       label: "Contact",         icon: "📞" },
+  { href: "#home",              label: "Home",            icon: "🏠" },
+  { href: "#about",         label: "About",           icon: "👨⚕️" },
+  { href: "#specializations",label: "Specializations", icon: "⭐" },
+  { href: "#services",      label: "Services",        icon: "🦷" },
+  { href: "#appointment",   label: "Appointment",     icon: "📅" },
+  { href: "#blog",          label: "Blog",            icon: "📝" },
+  { href: "#contact",       label: "Contact",         icon: "📞" },
 ];
 
 export function Navbar() {
@@ -60,7 +60,7 @@ export function Navbar() {
         <ScrollProgress />
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
           <a href="#hero" className="flex flex-col">
-            <span className="text-teal-600 font-bold text-lg leading-tight">Dr. Pritam</span>
+            <span className="text-teal-600 font-bold text-lg leading-tight">Dr. Pritam Pratik</span>
             <span className="text-slate-400 text-[10px] leading-tight tracking-wide">Implantologist · RCT Specialist</span>
           </a>
 
@@ -233,7 +233,7 @@ export function Navbar() {
 
               {/* ── DRAWER FOOTER ── */}
               <div className="border-t border-neutral-100 p-4">
-                <Link href="/appointment"
+                <Link href="#appointment"
                   className="flex w-full items-center justify-center gap-2
                     rounded-full bg-[#0D9488] py-3 text-[13px] font-bold
                     tracking-[0.02em] text-white
