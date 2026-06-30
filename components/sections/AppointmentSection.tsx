@@ -69,8 +69,8 @@ export function AppointmentSection() {
   };
 
   return (
-    <section id="appointment" className="py-20 lg:py-0 bg-white">
-      <div className="max-w-7xl mx-auto lg:flex">
+    <section id="appointment" className="py-20 lg:py-16 bg-white px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto lg:flex rounded-[28px] overflow-hidden shadow-xl shadow-teal-900/5 border border-slate-100">
         {/* Left Panel */}
         <RevealOnScroll direction="left" className="lg:w-[40%] bg-gradient-to-br from-teal-600 to-teal-700 text-white p-8 lg:p-12 flex flex-col justify-center">
           <span

@@ -214,6 +214,7 @@ export function Navbar() {
                   >
                     <Link
                       href={href}
+                      onClick={() => setOpen(false)}
                       className={`flex items-center justify-between
                         rounded-xl px-3 py-3.5 text-[15px] font-semibold
                         tracking-[-0.01em] transition-colors
@@ -234,6 +235,7 @@ export function Navbar() {
               {/* ── DRAWER FOOTER ── */}
               <div className="border-t border-neutral-100 p-4">
                 <Link href="#appointment"
+                  onClick={() => setOpen(false)}
                   className="flex w-full items-center justify-center gap-2
                     rounded-full bg-[#0D9488] py-3 text-[13px] font-bold
                     tracking-[0.02em] text-white

@@ -69,8 +69,8 @@ export function HeroSection() {
             className="relative z-10"
           >
             {/* Eyebrow badge */}
-            <motion.div variants={itemVariants} className="mb-6 max-w-full">
-              <div className="inline-flex flex-wrap max-w-full items-center gap-1.5 bg-teal-100 text-teal-800 tracking-widest text-[11px] uppercase font-semibold px-4 py-2 rounded-full" ref={badgeRef}>
+            <motion.div variants={itemVariants} className="mb-4 sm:mb-6 max-w-full min-h-[60px] sm:min-h-0 flex items-start sm:items-center">
+              <div className="inline-flex flex-wrap max-w-full items-center gap-1.5 bg-teal-100 text-teal-800 tracking-widest text-[11px] uppercase font-semibold px-4 py-2 rounded-2xl sm:rounded-full" ref={badgeRef}>
                 <span>🏅 BDS (Utkal)</span>
                 <span className="opacity-40">·</span>
                 <span>Regd. No. 1477(A)</span>
@@ -80,7 +80,7 @@ export function HeroSection() {
             </motion.div>
 
             {/* H1 Word mask reveal */}
-            <motion.div variants={itemVariants} className="mb-6">
+            <motion.div variants={itemVariants} className="mb-3 sm:mb-6">
               <h1 className="text-[32px] sm:text-[40px] md:text-[52px] lg:text-[64px] font-black tracking-[-0.03em] leading-[1.05]">
                 {heroWords.map((line, lineIdx) => (
                   <div key={lineIdx} className={line.color}>
@@ -90,15 +90,26 @@ export function HeroSection() {
                         .reduce((acc, w) => acc + w.text.split(' ').length, 0);
                       const delay = (totalPrevWords + wordIdx) * 0.07;
                       return (
-                        <span key={wordIdx} style={{ display: 'inline-block', overflow: 'hidden', marginRight: '0.3em' }}>
+                        <span 
+                          key={wordIdx} 
+                          style={{ 
+                            display: 'inline-block', 
+                            overflow: 'hidden', 
+                            marginRight: '0.25em',
+                            padding: '0.15em 0',
+                            margin: '-0.15em 0.25em -0.15em 0',
+                            verticalAlign: 'bottom'
+                          }}
+                        >
                           <motion.span
                             className="inline-block"
+                            style={{ willChange: 'transform' }}
                             initial={{ y: '100%' }}
                             animate={{ y: 0 }}
                             transition={
                               prefersReducedMotion
                                 ? { duration: 0 }
-                                : { duration: 0.8, delay: 0.3 + delay, ease: [0.76, 0, 0.24, 1] }
+                                : { duration: 0.8, delay: 0.2 + delay, ease: [0.76, 0, 0.24, 1] }
                             }
                           >
                             {word}
@@ -125,7 +136,7 @@ export function HeroSection() {
             {/* Expanding rule line */}
             <motion.div
               variants={itemVariants}
-              className="mb-6"
+              className="mb-4 sm:mb-6"
             >
               <motion.div
                 initial={{ width: 0 }}
@@ -140,12 +151,12 @@ export function HeroSection() {
             </motion.div>
 
             {/* Description */}
-            <motion.p variants={itemVariants} className="text-lg text-slate-500 max-w-md leading-relaxed mb-8">
+            <motion.p variants={itemVariants} className="text-lg text-slate-500 max-w-md leading-relaxed mb-6 sm:mb-8">
               Providing advanced, pain-free dental care at Choudhury Dental &amp; Skin Care Clinic, Salipur — with 15+ years of expertise in dental implants, root canal therapy, and comprehensive oral care.
             </motion.p>
 
             {/* CTA Row */}
-            <motion.div variants={itemVariants} className="flex flex-col gap-2.5 sm:flex-row mb-10">
+            <motion.div variants={itemVariants} className="flex flex-col gap-2.5 sm:flex-row mb-6 sm:mb-10">
               <SlideButton href="#appointment" variant="primary" className="w-full sm:w-auto flex justify-center">
                 📅 Book Appointment
               </SlideButton>

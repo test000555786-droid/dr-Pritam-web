@@ -217,7 +217,7 @@ export function ServicesSection() {
                         <button 
                           onClick={(e) => {
                             e.preventDefault();
-                            router.push('/appointment');
+                            document.querySelector('#appointment')?.scrollIntoView({ behavior: 'smooth' });
                           }}
                           className="flex-1 h-[44px] rounded-full bg-white text-[#0D9488] text-[13px] font-bold flex items-center justify-center gap-1.5"
                         >
@@ -228,7 +228,7 @@ export function ServicesSection() {
                         <button 
                           onClick={(e) => {
                             e.preventDefault();
-                            router.push(`/services/${service.slug}`);
+                            document.querySelector('#appointment')?.scrollIntoView({ behavior: 'smooth' });
                           }}
                           className="w-[44px] h-[44px] rounded-full flex-none bg-white/12 border border-white/25 flex items-center justify-center text-white/80"
                         >
@@ -283,7 +283,7 @@ export function ServicesSection() {
                     </span>
 
                     <button 
-                      onClick={() => router.push(`/services#${activeService.slug}`)}
+                      onClick={() => document.querySelector('#appointment')?.scrollIntoView({ behavior: 'smooth' })}
                       className="absolute top-3.5 right-3.5 z-10 w-8 h-8 rounded-full flex items-center justify-center bg-white/15 border border-white/25 text-white hover:bg-white/25 transition-colors"
                     >
                       <ArrowUpRight size={14} strokeWidth={2.5} />
@@ -304,7 +304,7 @@ export function ServicesSection() {
                     {/* CTA Row */}
                     <div className="mt-4 flex gap-2">
                       <button 
-                        onClick={() => router.push('/appointment')}
+                        onClick={() => document.querySelector('#appointment')?.scrollIntoView({ behavior: 'smooth' })}
                         className="flex-1 h-[38px] rounded-full bg-white text-[#0D9488] text-[12px] font-bold tracking-[0.02em] flex items-center justify-center gap-1.5 hover:bg-white/90 transition-colors active:scale-[0.98]"
                       >
                         Book Consultation
@@ -312,7 +312,7 @@ export function ServicesSection() {
                       </button>
                       
                       <button 
-                        onClick={() => router.push(`/services/${activeService.slug}`)}
+                        onClick={() => document.querySelector('#appointment')?.scrollIntoView({ behavior: 'smooth' })}
                         className="w-[38px] h-[38px] rounded-full flex-none bg-white/12 border border-white/25 flex items-center justify-center text-white/80 hover:bg-white/20 transition-colors"
                       >
                         <MoreHorizontal size={16} strokeWidth={2} />
