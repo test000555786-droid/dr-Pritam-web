@@ -39,7 +39,7 @@ const reasons = [
   },
   {
     icon: Wallet,
-    image: '/images/why-choose/affordable.webp',
+    image: '/images/why-choose/affordable-1.webp',
     title: 'Affordable Pricing',
     description: 'Quality dental care should not break the bank. Transparent pricing, flexible payment plans, and no hidden charges.',
   },
