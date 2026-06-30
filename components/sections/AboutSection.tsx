@@ -30,7 +30,7 @@ export function AboutSection() {
               {/* Image Card Container */}
               <div className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl group">
                 <Image 
-                  src="/images/dr-pritam-pratik.webp" 
+                  src="/images/dr-pritam-pratik-1.webp" 
                   alt="Dr. Ch. Pritam Pratik Praharaj" 
                   fill 
                   className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
@@ -63,8 +63,8 @@ export function AboutSection() {
                 </div>
               </div>
 
-              {/* Floating sub-card */}
-              <div className="absolute top-6 right-6 lg:-right-6 z-10">
+              {/* Floating sub-card — hidden on mobile to avoid covering the doctor's image */}
+              <div className="absolute top-6 right-6 lg:-right-6 z-10 hidden lg:block">
                 <FloatingCard delay={0.4} className="shadow-2xl border-teal-200 bg-white/95 backdrop-blur-sm min-w-[120px]">
                   <div className="flex flex-col items-center">
                     <Award className="w-6 h-6 text-teal-600 mb-1" />

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { ArrowDown, Clock } from 'lucide-react';
 import { RevealOnScroll } from '@/components/ui/RevealOnScroll';
@@ -12,6 +13,7 @@ const posts = [
     tag: 'Root Canal',
     readTime: '5 min read',
     title: '5 Signs You Might Need a Root Canal',
+    image: '/images/blog/root-canal.webp',
     excerpt: 'Tooth pain can be deceptive. Learn the early warning signs that indicate your tooth pulp may be infected and why timely intervention matters.',
     content: `
       <p class="mb-4"><strong>1. Persistent Tooth Pain</strong> — Pain that lingers long after eating or drinking hot or cold foods is a classic sign of pulp inflammation. The pain may be dull, throbbing, or sharp, and it often worsens when you lie down.</p>
@@ -26,6 +28,7 @@ const posts = [
     tag: 'Implants',
     readTime: '7 min read',
     title: 'Everything You Need to Know About Dental Implants',
+    image: '/images/blog/dental-implants.webp',
     excerpt: 'Dental implants are the closest thing to natural teeth. Discover how they work, who is a candidate, and what to expect during the procedure.',
     content: `
       <p class="mb-4"><strong>What Are Dental Implants?</strong> — A dental implant is a small titanium screw that acts as an artificial tooth root. It is surgically placed into the jawbone, where it fuses with the bone over 3–6 months in a process called osseointegration.</p>
@@ -40,6 +43,7 @@ const posts = [
     tag: 'Oral Health',
     readTime: '6 min read',
     title: 'How to Maintain Oral Health After 40',
+    image: '/images/blog/oral-health-after-40.webp',
     excerpt: 'As we age, our dental needs change. Here is a comprehensive guide to keeping your teeth strong, gums healthy, and smile bright well into your golden years.',
     content: `
       <p class="mb-4"><strong>1. Increase Gum Care</strong> — Gum disease is the leading cause of tooth loss in adults over 40. Use a soft-bristled electric toothbrush, floss daily, and consider an antimicrobial mouthwash. Watch for bleeding gums, receding gum lines, or persistent bad breath.</p>
@@ -54,12 +58,20 @@ const posts = [
 
 function BlogCard({ post, isOpen, onToggle }: { post: typeof posts[0]; isOpen: boolean; onToggle: () => void }) {
   return (
-    <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)]">
+    <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] group">
       {/* Top band */}
-      <div className="h-[140px] bg-gradient-to-br from-teal-500 to-teal-700 relative flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="w-32 h-32 rounded-full border border-white/20 absolute top-4 left-4" />
-          <div className="w-20 h-20 rounded-full border border-white/20 absolute bottom-4 right-8" />
+      <div className="h-[200px] bg-gradient-to-br from-teal-500 to-teal-700 relative flex items-center justify-center overflow-hidden">
+        <Image
+          src={post.image}
+          alt={post.title}
+          fill
+          className="object-cover mix-blend-overlay opacity-60 group-hover:scale-105 transition-transform duration-700"
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
+        <div className="absolute inset-0 bg-teal-950/30" />
+        <div className="absolute inset-0 opacity-20 pointer-events-none">
+          <div className="w-32 h-32 rounded-full border border-white/40 absolute top-4 left-4" />
+          <div className="w-20 h-20 rounded-full border border-white/40 absolute bottom-4 right-8" />
         </div>
         <div className="relative z-10 flex flex-col items-center">
           <span className="bg-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-2">

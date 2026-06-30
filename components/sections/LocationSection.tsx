@@ -45,7 +45,7 @@ export function LocationSection() {
           <RevealOnScroll direction="left">
             <div className="rounded-3xl overflow-hidden shadow-lg h-[400px] lg:h-full min-h-[400px]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3736.0!2d86.35!3d20.55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDMzJzAwLjAiTiA4NsKwMjEnMDAuMCJF!5e0!3m2!1sen!2sin!4v1"
+                src="https://maps.google.com/maps?q=Choudhury+Dental+%26+Skin+Care+Clinic%2C+Kendrapada+-+Cuttack+Rd%2C+Salipur%2C+Odisha+754202&t=&z=16&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0, minHeight: '400px' }}
@@ -72,8 +72,8 @@ export function LocationSection() {
                       <div>
                         <h3 className="font-semibold text-slate-900 mb-1">Clinic Address</h3>
                         <p className="text-sm text-slate-500 leading-relaxed">
-                          Choudhury Dental & Skin Care Clinic<br />
-                          Main Road, Salipur, Cuttack District<br />
+                          Choudhury Dental &amp; Skin Care Clinic<br />
+                          Kendrapada - Cuttack Rd, Salipur<br />
                           Odisha, India — 754202
                         </p>
                       </div>
@@ -122,7 +122,7 @@ export function LocationSection() {
                 {/* Directions button */}
                 <StaggerItem>
                   <SlideButton
-                    href="https://www.google.com/maps/dir//Salipur,+Odisha+754202"
+                    href="https://www.google.com/maps/dir/?api=1&destination=Choudhury+Dental+%26+Skin+Care+Clinic%2C+Kendrapada+Cuttack+Rd%2C+Salipur%2C+Odisha+754202&travelmode=driving"
                     target="_blank"
                     rel="noopener noreferrer"
                     variant="primary"
