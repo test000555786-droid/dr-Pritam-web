@@ -14,7 +14,7 @@ const specializations = [
     title: 'Dental Implantology',
     icon: '🦷',
     gradient: 'from-teal-500 to-teal-700',
-    image: '/images/specializations/dental_implant.png',
+    image: '/images/specializations/dental_implant.webp',
     badge: 'PRIMARY SPECIALIZATION',
     description:
       'Dental implants are the gold standard for replacing missing teeth. Dr. Praharaj specializes in single-tooth implants, multiple implants, and full-mouth rehabilitation using internationally approved implant systems.',
@@ -36,7 +36,7 @@ const specializations = [
     title: 'Endodontics & Root Canal Therapy',
     icon: '🔬',
     gradient: 'from-teal-700 to-teal-900',
-    image: '/images/specializations/root_canal.png',
+    image: '/images/specializations/root_canal.webp',
     badge: 'PRIMARY SPECIALIZATION',
     description:
       'Root canal therapy is often the last resort to save a severely damaged or infected tooth. Dr. Praharaj uses advanced rotary endodontics and digital apex locators to ensure pain-free, precise treatment with exceptional success rates.',

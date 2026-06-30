@@ -25,61 +25,61 @@ const services = [
     id: "01", name: "Dental Implants", category: "Restorative",
     slug: "dental-implants", satisfaction: 95,
     description: "Permanent titanium roots that look, feel, and function like natural teeth. Single to full-arch solutions.",
-    icon: Zap, image: "/images/services/dental_implants.png"
+    icon: Zap, image: "/images/services/dental_implants.webp"
   },
   {
     id: "02", name: "Root Canal Treatment", category: "Endodontic",
     slug: "root-canal", satisfaction: 88,
     description: "Pain-free RCT using advanced rotary endodontics and digital apex locators. Save your natural tooth.",
-    icon: FlaskConical, image: "/images/services/root_canal.png"
+    icon: FlaskConical, image: "/images/services/root_canal.webp"
   },
   {
     id: "03", name: "Crowns & Bridges", category: "Restorative",
     slug: "crowns-bridges", satisfaction: 80,
     description: "Custom-crafted ceramic and zirconia crowns that restore strength and beauty to damaged teeth.",
-    icon: Crown, image: "/images/services/crowns_bridges.png"
+    icon: Crown, image: "/images/services/crowns_bridges.webp"
   },
   {
     id: "04", name: "Smile Makeover", category: "Cosmetic",
     slug: "smile-makeover", satisfaction: 75,
     description: "Complete smile transformation combining veneers, whitening, contouring, and alignment corrections.",
-    icon: Sparkles, image: "/images/services/smile_makeover.png"
+    icon: Sparkles, image: "/images/services/smile_makeover.webp"
   },
   {
     id: "05", name: "Teeth Whitening", category: "Cosmetic",
     slug: "teeth-whitening", satisfaction: 60,
     description: "Professional in-office whitening that delivers up to 8 shades lighter in a single session.",
-    icon: Circle, image: "/images/services/teeth_whitening.png"
+    icon: Circle, image: "/images/services/teeth_whitening.webp"
   },
   {
     id: "06", name: "Dental Fillings", category: "Restorative",
     slug: "dental-fillings", satisfaction: 70,
     description: "Tooth-coloured composite fillings that blend seamlessly. Mercury-free, durable, aesthetically pleasing.",
-    icon: Layers, image: "/images/services/dental_fillings.png"
+    icon: Layers, image: "/images/services/dental_fillings.webp"
   },
   {
     id: "07", name: "Gum Treatment", category: "Periodontal",
     slug: "gum-treatment", satisfaction: 65,
     description: "Comprehensive periodontal care including scaling, root planing, and gum surgery for gingivitis.",
-    icon: Leaf, image: "/images/services/gum_treatment.png"
+    icon: Leaf, image: "/images/services/gum_treatment.webp"
   },
   {
     id: "08", name: "Tooth Extraction", category: "Oral Surgery",
     slug: "tooth-extraction", satisfaction: 85,
     description: "Gentle and atraumatic extraction of impacted, damaged, or problematic teeth with rapid healing.",
-    icon: Wrench, image: "/images/services/tooth_extraction.png"
+    icon: Wrench, image: "/images/services/tooth_extraction.webp"
   },
   {
     id: "09", name: "Dental Cleaning", category: "Preventive",
     slug: "dental-cleaning", satisfaction: 90,
     description: "Professional ultrasonic scaling and polishing. Essential for preventing gum disease and cavities.",
-    icon: Droplets, image: "/images/services/dental_cleaning.png"
+    icon: Droplets, image: "/images/services/dental_cleaning.webp"
   },
   {
     id: "10", name: "Pediatric Dentistry", category: "Preventive",
     slug: "pediatric-dentistry", satisfaction: 78,
     description: "Child-friendly dental care including preventive treatments, fluoride application, and habit counselling.",
-    icon: Baby, image: "/images/services/pediatric_dentistry.png"
+    icon: Baby, image: "/images/services/pediatric_dentistry.webp"
   },
 ];
 
